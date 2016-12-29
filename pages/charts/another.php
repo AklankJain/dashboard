@@ -45,7 +45,7 @@ echo "Connected successfully";
 <?php
 // PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:testdb-sks.database.windows.net,1433; Database = testing_send_data", "retail", "{your_password_here}");
+    $conn = new PDO("sqlsrv:server = tcp:testdb-sks.database.windows.net,1433; Database = testing_send_data", "retail", "Poc1@123");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
