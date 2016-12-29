@@ -27,6 +27,21 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+<?php
+$servername = "http://testdb-sks.database.windows.net/";
+$username = "retail";
+$password = "Poc1@123";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
+
 
   <header class="main-header">
     <!-- Logo -->
