@@ -31,6 +31,7 @@
 $servername = "http://testdb-sks.database.windows.net/";
 $username = "retail";
 $password = "Poc1@123";
+$db = "testing_send_data"
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
