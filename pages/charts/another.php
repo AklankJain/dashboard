@@ -27,7 +27,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-<?php
+<!-- <?php
 $servername = "http://testdb-sks.database.windows.net/";
 $username = "retail";
 $password = "Poc1@123";
@@ -41,8 +41,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-?>
+?> -->
+<?php
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:testdb-sks.database.windows.net,1433; Database = testing_send_data", "retail", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "retail@testdb-sks", "pwd" => "Poc1@123", "Database" => "testing_send_data", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:testdb-sks.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+?>
 
   <header class="main-header">
     <!-- Logo -->
