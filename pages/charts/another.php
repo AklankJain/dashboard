@@ -43,9 +43,8 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 ?> -->
 <?php
-// PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:testdb-sks.database.windows.net,1433; Database = testing_send_data", "retail", "Poc1@123");
+    $conn = new PDO("sqlsrv:server = tcp:retaildash.database.windows.net,1433; Database = retaildash", "retail", "nits@123");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
@@ -54,11 +53,10 @@ catch (PDOException $e) {
 }
 
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "retail@testdb-sks", "pwd" => "Poc1@123", "Database" => "testing_send_data", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:testdb-sks.database.windows.net,1433";
+$connectionInfo = array("UID" => "retail@retaildash", "pwd" => "nits@123", "Database" => "retaildash", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:retaildash.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 ?>
-
   <header class="main-header">
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
